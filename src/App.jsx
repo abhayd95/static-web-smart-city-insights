@@ -6,6 +6,7 @@ import DashboardPreview from './components/DashboardPreview'
 import SmartCityMetrics from './components/SmartCityMetrics'
 import IoTDevices from './components/IoTDevices'
 import DataSources from './components/DataSources'
+import AnalyticsShowcase from './components/AnalyticsShowcase'
 import Solutions from './components/Solutions'
 import UseCases from './components/UseCases'
 import Integrations from './components/Integrations'
@@ -27,6 +28,7 @@ function App() {
         <Features />
         <DashboardPreview />
         <SmartCityMetrics />
+        <AnalyticsShowcase />
         <IoTDevices />
         <DataSources />
         <Solutions />

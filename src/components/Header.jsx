@@ -16,6 +16,7 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'Features', href: '#features' },
     { name: 'Dashboard', href: '#dashboard' },
+    { name: 'Analytics', href: '#analytics' },
     { name: 'IoT Devices', href: '#iot-devices' },
     { name: 'Solutions', href: '#solutions' },
     { name: 'Case Studies', href: '#case-studies' },
