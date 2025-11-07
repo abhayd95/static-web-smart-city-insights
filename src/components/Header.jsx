@@ -73,14 +73,14 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="inline-flex items-center justify-center p-2 rounded-md bg-white/90 shadow lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             <img
               src={isMobileMenuOpen ? '/close-icon.svg' : '/menu-icon.svg'}
               alt={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              className="w-9 h-9"
+              className="w-8 h-8"
             />
           </button>
         </div>
