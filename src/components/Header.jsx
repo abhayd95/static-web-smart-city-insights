@@ -48,7 +48,7 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <div className="hidden xl:flex items-center space-x-1 xl:space-x-2">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -62,7 +62,7 @@ const Header = () => {
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden xl:flex items-center space-x-3">
             <button className="px-4 py-2 text-sm font-semibold text-gray-700 rounded-full border border-gray-200 hover:border-gold-400 hover:text-gold-600 transition-all">
               Login
             </button>
@@ -73,7 +73,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-gray-700 hover:text-gold-500"
+            className="xl:hidden p-2 text-gray-700 hover:text-gold-500"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
