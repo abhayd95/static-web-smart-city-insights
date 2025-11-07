@@ -161,21 +161,21 @@ const IoTDevices = () => {
 
         {/* Network Stats */}
         <ScrollReveal animation="scale" delay={3}>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <div className="bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl p-6 text-white text-center">
-              <div className="text-4xl font-bold mb-2">99.8%</div>
+              <div className="text-3xl sm:text-4xl font-bold mb-2">99.8%</div>
               <div className="text-sm opacity-90">Uptime</div>
             </div>
             <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white text-center">
-              <div className="text-4xl font-bold mb-2">&lt;50ms</div>
+              <div className="text-3xl sm:text-4xl font-bold mb-2">&lt;50ms</div>
               <div className="text-sm opacity-90">Response Time</div>
             </div>
             <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white text-center">
-              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-3xl sm:text-4xl font-bold mb-2">24/7</div>
               <div className="text-sm opacity-90">Monitoring</div>
             </div>
             <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white text-center">
-              <div className="text-4xl font-bold mb-2">1M+</div>
+              <div className="text-3xl sm:text-4xl font-bold mb-2">1M+</div>
               <div className="text-sm opacity-90">Data Points/Day</div>
             </div>
           </div>

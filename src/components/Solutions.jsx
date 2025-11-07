@@ -87,21 +87,21 @@ const Solutions = () => {
     <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
         <ScrollReveal animation="fade-in" className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
             Comprehensive
             <span className="text-gold-500"> Solutions</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             End-to-end smart city solutions tailored to address the unique challenges
             of modern urban environments
           </p>
-          <p className="text-base text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
             From transportation to energy, environment to governance - we provide
             integrated solutions that work together to create smarter, more efficient cities.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {solutions.map((solution, index) => (
             <ScrollReveal
               key={index}

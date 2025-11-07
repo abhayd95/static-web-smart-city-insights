@@ -9,68 +9,68 @@ const Hero = () => {
     >
       <div className="container mx-auto max-w-6xl">
         <ScrollReveal animation="fade-in" className="text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Smart City
             <span className="text-gold-500 block mt-2">Insights</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-2xl text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
             Transforming urban data into actionable intelligence for smarter,
             more sustainable cities
           </p>
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-lg text-gray-500 mb-4">
+          <div className="max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg text-gray-500 mb-4">
               Our comprehensive analytics platform empowers city leaders to make data-driven decisions, optimize resources, and enhance quality of life for millions of citizens. From traffic management to energy efficiency, waste reduction to public safety - we provide the insights you need to build the cities of tomorrow.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mt-6">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-600 mt-6">
               <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Real-Time Monitoring</span>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>AI-Powered Analytics</span>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Predictive Insights</span>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Scalable Solutions</span>
               </div>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-slide-up">
             <a
               href="#dashboard"
-              className="px-8 py-4 bg-gold-500 text-white font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+              className="w-full sm:w-auto px-7 sm:px-8 py-3 sm:py-4 bg-gold-500 text-white font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg"
             >
               Explore Dashboard
             </a>
             <a
               href="#features"
-              className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gold-500 hover:bg-gold-50 transition-all shadow-md hover:shadow-lg text-lg"
+              className="w-full sm:w-auto px-7 sm:px-8 py-3 sm:py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gold-500 hover:bg-gold-50 transition-all shadow-md hover:shadow-lg text-base sm:text-lg"
             >
               View Features
             </a>
             <a
               href="#pricing"
-              className="px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-gray-900 transition-all text-lg"
+              className="w-full sm:w-auto px-7 sm:px-8 py-3 sm:py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-gray-900 transition-all text-base sm:text-lg"
             >
               See Pricing
             </a>
           </div>
           
           {/* Quick Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto animate-fade-in">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto animate-fade-in">
             <div className="text-center p-6 bg-white bg-opacity-10 backdrop-blur rounded-xl border border-white border-opacity-20">
               <div className="text-3xl font-bold text-gold-400 mb-2">500+</div>
               <div className="text-sm text-gray-300">Cities</div>
