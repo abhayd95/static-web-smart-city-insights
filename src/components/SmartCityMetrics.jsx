@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import ScrollReveal from './ScrollReveal'
 
 const SmartCityMetrics = () => {
@@ -75,18 +75,22 @@ const SmartCityMetrics = () => {
         </ScrollReveal>
 
         {/* Domain Tabs */}
-        <ScrollReveal animation="slide-left" delay={1} className="flex flex-wrap justify-center gap-3 mb-12">
+        <ScrollReveal
+          animation="slide-left"
+          delay={1}
+          className="flex gap-3 mb-12 overflow-x-auto sm:flex-wrap sm:justify-center pb-2 sm:pb-0 -mx-2 sm:mx-0"
+        >
           {domains.map((domain, index) => (
             <button
               key={index}
               onClick={() => setSelectedDomain(index)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center space-x-2 ${
+              className={`px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all flex items-center space-x-2 whitespace-nowrap min-w-[150px] ${
                 selectedDomain === index
                   ? `bg-gradient-to-r ${getColorClasses(domain.color)} text-white shadow-lg transform scale-105`
                   : 'bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-200'
               }`}
             >
-              <span className="text-2xl">{domain.icon}</span>
+              <span className="text-xl">{domain.icon}</span>
               <span>{domain.name}</span>
             </button>
           ))}

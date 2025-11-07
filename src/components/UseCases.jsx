@@ -122,22 +122,26 @@ const UseCases = () => {
           </p>
         </ScrollReveal>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        {/* Case Study Tabs */}
+        <ScrollReveal
+          animation="slide-left"
+          delay={1}
+          className="flex gap-2 mb-12 overflow-x-auto md:flex-wrap md:justify-center pb-2 md:pb-0 -mx-2 md:mx-0"
+        >
           {useCases.map((useCase, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+              className={`px-5 py-2 rounded-lg font-semibold transition-all min-w-[150px] whitespace-nowrap ${
                 activeTab === index
-                  ? 'bg-gold-500 text-white shadow-lg'
+                  ? 'bg-gold-500 text-white shadow-lg transform scale-105'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
               {useCase.title}
             </button>
           ))}
-        </div>
+        </ScrollReveal>
 
         {/* Active Use Case Content */}
         <ScrollReveal animation="scale" delay={1}>
