@@ -48,12 +48,44 @@ const Hero = () => {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-            <button className="px-8 py-4 bg-gold-500 text-white font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
-              Explore Insights
-            </button>
-            <button className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gold-500 hover:bg-gold-50 transition-all shadow-md hover:shadow-lg text-lg">
-              Learn More
-            </button>
+            <a
+              href="#dashboard"
+              className="px-8 py-4 bg-gold-500 text-white font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+            >
+              Explore Dashboard
+            </a>
+            <a
+              href="#features"
+              className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gold-500 hover:bg-gold-50 transition-all shadow-md hover:shadow-lg text-lg"
+            >
+              View Features
+            </a>
+            <a
+              href="#pricing"
+              className="px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-gray-900 transition-all text-lg"
+            >
+              See Pricing
+            </a>
+          </div>
+          
+          {/* Quick Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto animate-fade-in">
+            <div className="text-center p-6 bg-white bg-opacity-10 backdrop-blur rounded-xl border border-white border-opacity-20">
+              <div className="text-3xl font-bold text-gold-400 mb-2">500+</div>
+              <div className="text-sm text-gray-300">Cities</div>
+            </div>
+            <div className="text-center p-6 bg-white bg-opacity-10 backdrop-blur rounded-xl border border-white border-opacity-20">
+              <div className="text-3xl font-bold text-gold-400 mb-2">10M+</div>
+              <div className="text-sm text-gray-300">Data Points</div>
+            </div>
+            <div className="text-center p-6 bg-white bg-opacity-10 backdrop-blur rounded-xl border border-white border-opacity-20">
+              <div className="text-3xl font-bold text-gold-400 mb-2">95%</div>
+              <div className="text-sm text-gray-300">Accuracy</div>
+            </div>
+            <div className="text-center p-6 bg-white bg-opacity-10 backdrop-blur rounded-xl border border-white border-opacity-20">
+              <div className="text-3xl font-bold text-gold-400 mb-2">24/7</div>
+              <div className="text-sm text-gray-300">Support</div>
+            </div>
           </div>
         </div>
 

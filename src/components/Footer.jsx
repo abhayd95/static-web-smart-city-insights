@@ -4,11 +4,13 @@ const Footer = () => {
   const footerLinks = {
     product: [
       { name: 'Features', href: '#features' },
+      { name: 'Dashboard', href: '#dashboard' },
       { name: 'Solutions', href: '#solutions' },
+      { name: 'Use Cases', href: '#use-cases' },
       { name: 'How It Works', href: '#how-it-works' },
-      { name: 'Insights', href: '#insights' },
-      { name: 'Analytics', href: '#analytics' },
-      { name: 'API Documentation', href: '#api' },
+      { name: 'Technology', href: '#technology' },
+      { name: 'Pricing', href: '#pricing' },
+      { name: 'FAQ', href: '#faq' },
     ],
     company: [
       { name: 'About Us', href: '#about' },
