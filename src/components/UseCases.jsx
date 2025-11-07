@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const UseCases = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -111,7 +112,7 @@ const UseCases = () => {
   return (
     <section id="use-cases" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Real-World
             <span className="text-gold-500"> Use Cases</span>
@@ -119,7 +120,7 @@ const UseCases = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover how cities worldwide are leveraging our platform to solve critical urban challenges
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
@@ -139,7 +140,8 @@ const UseCases = () => {
         </div>
 
         {/* Active Use Case Content */}
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 lg:p-12 shadow-xl border border-gray-100 animate-fade-in">
+        <ScrollReveal animation="scale" delay={1}>
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 lg:p-12 shadow-xl border border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Side */}
             <div>
@@ -210,7 +212,8 @@ const UseCases = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

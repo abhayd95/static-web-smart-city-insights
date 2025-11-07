@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const DashboardPreview = () => {
   const [activeMetric, setActiveMetric] = useState(0)
@@ -30,7 +31,7 @@ const DashboardPreview = () => {
   return (
     <section id="dashboard" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Interactive
             <span className="text-gold-400"> Dashboard Preview</span>
@@ -38,10 +39,11 @@ const DashboardPreview = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Experience the power of real-time data visualization with our comprehensive analytics dashboard
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Dashboard Mockup */}
-        <div className="bg-gray-800 rounded-2xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-gray-700">
+        <ScrollReveal animation="scale" delay={1}>
+          <div className="bg-gray-800 rounded-2xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-gray-700">
           {/* Dashboard Header */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
             <div>
@@ -126,17 +128,18 @@ const DashboardPreview = () => {
               <div className="text-sm opacity-90">Monitoring</div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <ScrollReveal animation="fade-in" delay={2} className="text-center mt-12">
           <p className="text-gray-300 mb-6">
             Want to see the full dashboard in action?
           </p>
           <button className="px-8 py-4 bg-gold-500 text-white font-semibold rounded-lg hover:bg-gold-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Request Demo
           </button>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

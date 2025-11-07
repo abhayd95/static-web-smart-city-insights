@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Solutions = () => {
   const solutions = [
@@ -85,7 +86,7 @@ const Solutions = () => {
   return (
     <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Comprehensive
             <span className="text-gold-500"> Solutions</span>
@@ -98,15 +99,16 @@ const Solutions = () => {
             From transportation to energy, environment to governance - we provide
             integrated solutions that work together to create smarter, more efficient cities.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 hover:border-gold-300 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              animation={index % 3 === 0 ? 'slide-left' : index % 3 === 1 ? 'scale' : 'slide-right'}
+              delay={Math.floor(index / 3)}
             >
+              <div className="group bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 hover:border-gold-300 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-semibold text-gold-600 bg-gold-50 px-3 py-1 rounded-full">
@@ -146,7 +148,8 @@ const Solutions = () => {
                   Learn More
                 </button>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

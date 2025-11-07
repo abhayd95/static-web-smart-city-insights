@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const HowItWorks = () => {
   const steps = [
@@ -91,7 +92,7 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             How It
             <span className="text-gold-500"> Works</span>
@@ -100,7 +101,7 @@ const HowItWorks = () => {
             Our four-step process transforms raw urban data into actionable intelligence
             that drives smarter city management
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="relative">
           {/* Connection Line (hidden on mobile) */}
@@ -108,12 +109,12 @@ const HowItWorks = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {steps.map((step, index) => (
-              <div
+              <ScrollReveal
                 key={index}
-                className="relative animate-slide-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                animation={index % 2 === 0 ? 'slide-left' : 'slide-right'}
+                delay={index}
               >
-                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-gold-500">
+                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-gold-500 h-full">
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-gold-500">{step.icon}</div>
                     <div className="text-6xl font-bold text-gold-100">
@@ -127,13 +128,13 @@ const HowItWorks = () => {
                     {step.description}
                   </p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 text-center animate-fade-in">
+        <ScrollReveal animation="scale" delay={4} className="mt-16 text-center">
           <div className="bg-gold-50 rounded-xl p-8 max-w-4xl mx-auto border border-gold-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to Get Started?
@@ -152,7 +153,7 @@ const HowItWorks = () => {
               </button>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

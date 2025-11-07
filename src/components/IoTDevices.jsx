@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const IoTDevices = () => {
   const devices = [
@@ -88,7 +89,7 @@ const IoTDevices = () => {
   return (
     <section id="iot-devices" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             IoT Devices &
             <span className="text-gold-500"> Sensor Network</span>
@@ -102,14 +103,16 @@ const IoTDevices = () => {
               {devices.reduce((sum, device) => sum + parseInt(device.count.replace(',', '')), 0).toLocaleString()} Devices Active
             </span>
           </div>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {devices.map((device, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              animation={index % 3 === 0 ? 'slide-left' : index % 3 === 1 ? 'fade-in' : 'slide-right'}
+              delay={Math.floor(index / 3)}
             >
+              <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <div className="flex items-start justify-between mb-4">
                 <div className="text-5xl">{device.icon}</div>
                 <div className="text-right">
@@ -151,29 +154,32 @@ const IoTDevices = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Network Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl p-6 text-white text-center">
-            <div className="text-4xl font-bold mb-2">99.8%</div>
-            <div className="text-sm opacity-90">Uptime</div>
+        <ScrollReveal animation="scale" delay={3}>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl p-6 text-white text-center">
+              <div className="text-4xl font-bold mb-2">99.8%</div>
+              <div className="text-sm opacity-90">Uptime</div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white text-center">
+              <div className="text-4xl font-bold mb-2">&lt;50ms</div>
+              <div className="text-sm opacity-90">Response Time</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white text-center">
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-sm opacity-90">Monitoring</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white text-center">
+              <div className="text-4xl font-bold mb-2">1M+</div>
+              <div className="text-sm opacity-90">Data Points/Day</div>
+            </div>
           </div>
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white text-center">
-            <div className="text-4xl font-bold mb-2">&lt;50ms</div>
-            <div className="text-sm opacity-90">Response Time</div>
-          </div>
-          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white text-center">
-            <div className="text-4xl font-bold mb-2">24/7</div>
-            <div className="text-sm opacity-90">Monitoring</div>
-          </div>
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white text-center">
-            <div className="text-4xl font-bold mb-2">1M+</div>
-            <div className="text-sm opacity-90">Data Points/Day</div>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

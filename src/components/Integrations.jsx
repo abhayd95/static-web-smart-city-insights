@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Integrations = () => {
   const integrations = [
@@ -93,7 +94,7 @@ const Integrations = () => {
   return (
     <section id="integrations" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Seamless
             <span className="text-gold-500"> Integrations</span>
@@ -104,15 +105,17 @@ const Integrations = () => {
           <p className="text-base text-gray-500 max-w-2xl mx-auto">
             Our platform supports multiple protocols and standards, making integration with your current systems simple and secure.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Integration Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {integrations.map((integration, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              animation={index % 3 === 0 ? 'slide-left' : index % 3 === 1 ? 'scale' : 'slide-right'}
+              delay={Math.floor(index / 3)}
             >
+              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <div className="flex items-start justify-between mb-4">
                 <div className="text-4xl">{integration.icon}</div>
                 <span className="px-3 py-1 bg-gold-50 text-gold-700 text-xs font-semibold rounded-full">
@@ -136,12 +139,14 @@ const Integrations = () => {
                   ))}
                 </div>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Integration Benefits */}
-        <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-xl border border-gray-100">
+        <ScrollReveal animation="scale" delay={2}>
+          <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-xl border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Integration Benefits
           </h3>
@@ -168,7 +173,8 @@ const Integrations = () => {
               </p>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

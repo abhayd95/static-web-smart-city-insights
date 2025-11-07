@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState('monthly')
@@ -69,7 +70,7 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-white to-gold-50">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Flexible
             <span className="text-gold-500"> Pricing Plans</span>
@@ -98,19 +99,20 @@ const Pricing = () => {
               <span className="ml-2 text-gold-600 font-bold">Save 17%</span>
             </span>
           </div>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className={`relative p-8 bg-white rounded-2xl border-2 transition-all duration-300 transform hover:-translate-y-2 card-hover-effect ${
+              animation={index === 1 ? 'scale' : index === 0 ? 'slide-left' : 'slide-right'}
+              delay={index}
+            >
+              <div className={`relative p-8 bg-white rounded-2xl border-2 transition-all duration-300 transform hover:-translate-y-2 card-hover-effect h-full ${
                 plan.popular
                   ? 'border-gold-500 shadow-2xl scale-105'
                   : 'border-gray-200 shadow-lg hover:border-gold-300'
-              } animate-slide-up`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+              }`}>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-gold-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
@@ -168,11 +170,12 @@ const Pricing = () => {
               >
                 Get Started
               </button>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <ScrollReveal animation="fade-in" delay={3} className="mt-12 text-center">
           <p className="text-gray-600 mb-4">
             Need a custom solution?{' '}
             <a href="#contact" className="text-gold-600 font-semibold hover:underline">
@@ -199,7 +202,7 @@ const Pricing = () => {
               <span>Cancel anytime</span>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

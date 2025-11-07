@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Testimonials = () => {
   const testimonials = [
@@ -55,7 +56,7 @@ const Testimonials = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Trusted by City Leaders
             <span className="text-gold-500"> Worldwide</span>
@@ -63,15 +64,16 @@ const Testimonials = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See what city administrators and urban planners are saying about our platform
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              animation={index % 3 === 0 ? 'slide-left' : index % 3 === 1 ? 'fade-in' : 'slide-right'}
+              delay={Math.floor(index / 3)}
             >
+              <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <div className="flex items-center mb-4">
                 <div className="text-4xl mr-4">{testimonial.image}</div>
                 <div>
@@ -99,7 +101,8 @@ const Testimonials = () => {
               <p className="text-gray-700 leading-relaxed italic">
                 "{testimonial.quote}"
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

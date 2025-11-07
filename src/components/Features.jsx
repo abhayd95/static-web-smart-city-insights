@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Features = () => {
   const features = [
@@ -350,7 +351,7 @@ const Features = () => {
       className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Powerful Features for
             <span className="text-gold-500"> Smart Cities</span>
@@ -362,15 +363,16 @@ const Features = () => {
           <p className="text-base text-gray-500 max-w-2xl mx-auto">
             Our platform combines cutting-edge technology with intuitive design to help city administrators, planners, and citizens work together in creating more efficient, sustainable, and livable urban environments.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              animation={index % 3 === 0 ? 'slide-left' : index % 3 === 1 ? 'fade-in' : 'slide-right'}
+              delay={Math.floor(index / 3)}
             >
+              <div className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <div className="text-gold-500 mb-4">{feature.icon}</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {feature.title}
@@ -378,7 +380,8 @@ const Features = () => {
               <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

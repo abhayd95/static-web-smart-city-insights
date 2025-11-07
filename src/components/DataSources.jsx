@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const DataSources = () => {
   const dataSources = [
@@ -97,7 +98,7 @@ const DataSources = () => {
   return (
     <section id="data-sources" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Comprehensive
             <span className="text-gold-400"> Data Sources</span>
@@ -105,14 +106,16 @@ const DataSources = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Integrate data from multiple sources to create a complete picture of your city
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {dataSources.map((source, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gold-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              animation={index % 3 === 0 ? 'slide-left' : index % 3 === 1 ? 'fade-in' : 'slide-right'}
+              delay={Math.floor(index / 3)}
             >
+              <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gold-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <div className="flex items-center mb-4">
                 <div className="text-4xl mr-4">{source.icon}</div>
                 <h3 className="text-xl font-bold">{source.category}</h3>
@@ -144,12 +147,14 @@ const DataSources = () => {
                   Learn More
                 </button>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Integration Stats */}
-        <div className="mt-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl p-8 lg:p-12">
+        <ScrollReveal animation="scale" delay={2}>
+          <div className="mt-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl p-8 lg:p-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-5xl font-bold mb-2">50+</div>
@@ -164,7 +169,8 @@ const DataSources = () => {
               <div className="text-lg opacity-90">Integration Uptime</div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

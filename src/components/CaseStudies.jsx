@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const CaseStudies = () => {
   const [selectedCase, setSelectedCase] = useState(0)
@@ -77,7 +78,7 @@ const CaseStudies = () => {
   return (
     <section id="case-studies" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Success
             <span className="text-gold-500"> Case Studies</span>
@@ -85,10 +86,10 @@ const CaseStudies = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real-world examples of cities transforming through smart technology
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Case Study Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <ScrollReveal animation="slide-left" delay={1} className="flex flex-wrap justify-center gap-3 mb-12">
           {caseStudies.map((study, index) => (
             <button
               key={index}
@@ -102,10 +103,11 @@ const CaseStudies = () => {
               {study.country} {study.city}
             </button>
           ))}
-        </div>
+        </ScrollReveal>
 
         {/* Case Study Content */}
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 lg:p-12 border border-gray-100">
+        <ScrollReveal animation="scale" delay={2}>
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 lg:p-12 border border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Side */}
             <div>
@@ -187,7 +189,8 @@ const CaseStudies = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

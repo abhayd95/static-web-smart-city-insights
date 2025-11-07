@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gold-50 pt-24 pb-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Smart City
             <span className="text-gold-500 block mt-2">Insights</span>
@@ -87,7 +88,7 @@ const Hero = () => {
               <div className="text-sm text-gray-300">Support</div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-gold-200 rounded-full opacity-20 blur-xl animate-pulse"></div>

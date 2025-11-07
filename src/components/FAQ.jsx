@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0)
@@ -59,7 +60,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Frequently Asked
             <span className="text-gold-500"> Questions</span>
@@ -67,14 +68,16 @@ const FAQ = () => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Find answers to common questions about Smart City Insights
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg"
+              animation="fade-in"
+              delay={Math.floor(index / 2)}
             >
+              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg">
               <button
                 className="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
@@ -109,12 +112,13 @@ const FAQ = () => {
                   {faq.answer}
                 </div>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-12 text-center bg-gold-50 rounded-xl p-8 border border-gold-200">
+        <ScrollReveal animation="scale" delay={5} className="mt-12 text-center bg-gold-50 rounded-xl p-8 border border-gold-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
             Still have questions?
           </h3>
@@ -129,7 +133,7 @@ const FAQ = () => {
               Schedule a Call
             </button>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const Technology = () => {
   const technologies = [
@@ -61,7 +62,7 @@ const Technology = () => {
   return (
     <section id="technology" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
+        <ScrollReveal animation="fade-in" className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Technology
             <span className="text-gold-500"> Stack</span>
@@ -69,14 +70,16 @@ const Technology = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Built with cutting-edge technologies to deliver performance, scalability, and reliability
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {technologies.map((tech, categoryIndex) => (
-            <div
+            <ScrollReveal
               key={categoryIndex}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              animation={categoryIndex % 3 === 0 ? 'slide-left' : categoryIndex % 3 === 1 ? 'scale' : 'slide-right'}
+              delay={Math.floor(categoryIndex / 3)}
             >
+              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-gold-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
               <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                 <span className="w-1 h-6 bg-gold-500 mr-3 rounded"></span>
                 {tech.category}
@@ -95,35 +98,38 @@ const Technology = () => {
                   </div>
                 ))}
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Architecture Overview */}
-        <div className="mt-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl p-8 lg:p-12 text-white">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">Scalable Architecture</h3>
-            <p className="text-lg text-gold-100 max-w-2xl mx-auto">
-              Our platform is designed with microservices architecture, ensuring high availability,
-              scalability, and easy maintenance. Each component can scale independently based on demand.
-            </p>
-          </div>
+        <ScrollReveal animation="scale" delay={2}>
+          <div className="mt-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl p-8 lg:p-12 text-white">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold mb-4">Scalable Architecture</h3>
+              <p className="text-lg text-gold-100 max-w-2xl mx-auto">
+                Our platform is designed with microservices architecture, ensuring high availability,
+                scalability, and easy maintenance. Each component can scale independently based on demand.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
-              <div className="text-3xl font-bold mb-2">99.9%</div>
-              <div className="text-sm">Uptime SLA</div>
-            </div>
-            <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
-              <div className="text-3xl font-bold mb-2">&lt;100ms</div>
-              <div className="text-sm">Average Response Time</div>
-            </div>
-            <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
-              <div className="text-3xl font-bold mb-2">1M+</div>
-              <div className="text-sm">Data Points/Second</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
+                <div className="text-3xl font-bold mb-2">99.9%</div>
+                <div className="text-sm">Uptime SLA</div>
+              </div>
+              <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
+                <div className="text-3xl font-bold mb-2">&lt;100ms</div>
+                <div className="text-sm">Average Response Time</div>
+              </div>
+              <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
+                <div className="text-3xl font-bold mb-2">1M+</div>
+                <div className="text-sm">Data Points/Second</div>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )
